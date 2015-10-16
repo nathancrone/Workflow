@@ -1,8 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Microsoft.Practices.Unity;
+
+using Workflow.Contracts.Models;
 
 namespace Workflow.Presentation.CommandLine
 {
@@ -10,6 +9,17 @@ namespace Workflow.Presentation.CommandLine
     {
         static void Main(string[] args)
         {
+            using (var container = new UnityContainer())
+            {
+                ContainerBootstrapper.RegisterTypes(container);
+
+                //container.Resolve<IProcess>().Initialize();
+                //container.Resolve<ISurveyAnswerStore>().Initialize();
+                //container.Resolve<ITenantStore>().Initialize();
+
+                Console.WriteLine("Done");
+                Console.ReadLine();
+            }
         }
     }
 }
