@@ -50,20 +50,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataContext.cs" />
-    <Compile Include="Models\Process.cs" />
-    <Compile Include="Models\Request.cs" />
-    <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Workflow.Contracts\Workflow.Contracts.csproj">
-      <Project>{7d8f27b1-45ba-47bd-a5d3-dddfd7ec49ad}</Project>
-      <Name>Workflow.Contracts</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Workflow.Models\Workflow.Models.csproj">
+      <Project>{6cbcec93-e15a-41bb-9d82-90bd4d700b94}</Project>
+      <Name>Workflow.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

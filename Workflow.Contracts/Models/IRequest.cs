@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Workflow.Contracts.Models
 {
@@ -7,5 +8,7 @@ namespace Workflow.Contracts.Models
         int? RequestId { get; set; }
         string Title { get; set; }
         DateTime DateRequested { get; set; }
+
+        ICollection<IUser> Stakeholders { get; set; }
     }
 }
