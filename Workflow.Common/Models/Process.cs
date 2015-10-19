@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Workflow.Models
+namespace Workflow.Common.Models
 {
     public class Process 
     {

@@ -1,4 +1,4 @@
-﻿namespace Workflow.Contracts.Repositories
+﻿namespace Workflow.Common.Repositories
 {
     public interface IRepository<T>
     {

@@ -57,9 +57,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Workflow.Models\Workflow.Models.csproj">
-      <Project>{6cbcec93-e15a-41bb-9d82-90bd4d700b94}</Project>
-      <Name>Workflow.Models</Name>
+    <ProjectReference Include="..\Workflow.Common\Workflow.Common.csproj">
+      <Project>{9692c81e-4956-481f-9501-652f26f4ff51}</Project>
+      <Name>Workflow.Common</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

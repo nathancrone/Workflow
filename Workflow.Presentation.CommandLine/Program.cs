@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.Practices.Unity;
 
-using Workflow.Contracts.Models;
+using Workflow.Common.Models;
 
 namespace Workflow.Presentation.CommandLine
 {

@@ -43,9 +43,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Workflow.Contracts\Workflow.Contracts.csproj">
-      <Project>{7d8f27b1-45ba-47bd-a5d3-dddfd7ec49ad}</Project>
-      <Name>Workflow.Contracts</Name>
+    <ProjectReference Include="..\Workflow.Common\Workflow.Common.csproj">
+      <Project>{9692c81e-4956-481f-9501-652f26f4ff51}</Project>
+      <Name>Workflow.Common</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

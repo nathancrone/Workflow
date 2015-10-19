@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-using Workflow.Contracts.Models;
-
-namespace Workflow.Models
+namespace Workflow.Common.Models
 {
     public class User
     {
@@ -16,5 +14,7 @@ namespace Workflow.Models
         public ICollection<Process> AdministeredProcesses { get; set; }
 
         public ICollection<Request> StakeRequests { get; set; }
+
+        public ICollection<RequestNote> RequestNotes { get; set; }
     }
 }

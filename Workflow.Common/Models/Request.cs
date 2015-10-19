@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using Workflow.Contracts.Models;
 
-namespace Workflow.Models
+namespace Workflow.Common.Models
 {
     public class Request
     {
@@ -17,5 +16,8 @@ namespace Workflow.Models
         public DateTime DateRequested { get; set; }
 
         public ICollection<User> Stakeholders { get; set; }
+
+        public ICollection<RequestNote> RequestNotes { get; set; }
+        public ICollection<RequestData> RequestData { get; set; }
     }
 }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Workflow.Contracts.Services
+namespace Workflow.Common.Services
 {
     public interface IService<T>
     {
