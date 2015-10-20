@@ -13,7 +13,7 @@ namespace Workflow.Common.Models
         public virtual Process Process { get; set; }
         public virtual ActivityType ActivityType { get; set; }
 
-        public ICollection<Transition> Transitions { get; set; }
-        public ICollection<State> States { get; set; }
+        public virtual ICollection<Transition> Transitions { get; set; }
+        public virtual ICollection<State> States { get; set; }
     }
 }

@@ -50,6 +50,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataContext.cs" />
+    <Compile Include="GenericRepository.cs" />
+    <Compile Include="Migrations\201510201828532_Initial.cs" />
+    <Compile Include="Migrations\201510201828532_Initial.Designer.cs">
+      <DependentUpon>201510201828532_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="ProcessRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -61,6 +68,11 @@
       <Project>{9692c81e-4956-481f-9501-652f26f4ff51}</Project>
       <Name>Workflow.Common</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201510201828532_Initial.resx">
+      <DependentUpon>201510201828532_Initial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

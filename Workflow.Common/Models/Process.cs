@@ -8,10 +8,10 @@ namespace Workflow.Common.Models
         public string Name { get; set; }
 
         public virtual ICollection<User> ProcessAdmins { get; set; }
-        public ICollection<Request> Requests { get; set; }
-        public ICollection<State> States { get; set; }
-        public ICollection<Transition> Transitions { get; set; }
-        public ICollection<Action> Actions { get; set; }
-        public ICollection<Group> Groups { get; set; }
+        public virtual ICollection<Request> Requests { get; set; }
+        public virtual ICollection<State> States { get; set; }
+        public virtual ICollection<Transition> Transitions { get; set; }
+        public virtual ICollection<Action> Actions { get; set; }
+        public virtual ICollection<Group> Groups { get; set; }
     }
 }

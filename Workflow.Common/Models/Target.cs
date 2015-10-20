@@ -8,8 +8,8 @@ namespace Workflow.Common.Models
         public string Name { get; set; }
         public string Description { get; set; }
 
-        public ICollection<ActionTarget> ActionTargets { get; set; }
-        public ICollection<ActivityTarget> ActivityTargets { get; set; }
+        public virtual ICollection<ActionTarget> ActionTargets { get; set; }
+        public virtual ICollection<ActivityTarget> ActivityTargets { get; set; }
 
     }
 }

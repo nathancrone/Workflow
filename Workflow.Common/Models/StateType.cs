@@ -7,6 +7,6 @@ namespace Workflow.Common.Models
         public int? StateTypeId { get; set; }
         public string Name { get; set; }
 
-        public ICollection<State> States { get; set; }
+        public virtual ICollection<State> States { get; set; }
     }
 }

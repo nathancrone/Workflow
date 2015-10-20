@@ -3,7 +3,7 @@ using Workflow.Common.Models;
 
 namespace Workflow.Common.Repositories
 {
-    public interface IRequestNoteRepository : IRepository<RequestNote>
+    public interface IRequestNoteRepository : IGenericRepository<RequestNote>
     {
         //Query Methods
         IQueryable<RequestNote> GetAll();

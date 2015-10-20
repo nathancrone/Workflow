@@ -14,8 +14,8 @@ namespace Workflow.Common.Models
         public virtual Process Process { get; set; }
         public virtual User User { get; set; }
 
-        public ICollection<User> Stakeholders { get; set; }
-        public ICollection<RequestNote> RequestNotes { get; set; }
-        public ICollection<RequestData> RequestData { get; set; }
+        public virtual ICollection<User> Stakeholders { get; set; }
+        public virtual ICollection<RequestNote> RequestNotes { get; set; }
+        public virtual ICollection<RequestData> RequestData { get; set; }
     }
 }

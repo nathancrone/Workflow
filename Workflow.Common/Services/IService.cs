@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Workflow.Common.Services
 {
-    public interface IService<T>
+    public interface IService<T> : IDisposable where T : class
     {
         //Query Methods
         T FindById(int id);

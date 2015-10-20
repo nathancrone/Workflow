@@ -11,9 +11,8 @@ namespace Workflow.Common.Models
 
         public virtual Process Process { get; set; }
 
-        public ICollection<User> Members { get; set; }
-
-        public ICollection<ActionTarget> ActionTargets { get; set; }
-        public ICollection<ActivityTarget> ActivityTargets { get; set; }
+        public virtual ICollection<User> Members { get; set; }
+        public virtual ICollection<ActionTarget> ActionTargets { get; set; }
+        public virtual ICollection<ActivityTarget> ActivityTargets { get; set; }
     }
 }

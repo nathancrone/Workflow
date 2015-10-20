@@ -2,10 +2,11 @@
 using System.ComponentModel.DataAnnotations.Schema;
 
 using Workflow.Common.Models;
+using System.Data.Entity.ModelConfiguration.Conventions;
 
 namespace Workflow.Repositories.DataRepository
 {
-    class DataContext : DbContext
+    public class DataContext : DbContext
     {
         public virtual DbSet<Process> Processes { get; set; }
         public virtual DbSet<User> Users { get; set; }
@@ -17,12 +18,19 @@ namespace Workflow.Repositories.DataRepository
         public virtual DbSet<Transition> Transitions { get; set; }
         public virtual DbSet<ActionType> ActionTypes { get; set; }
         public virtual DbSet<Action> Actions { get; set; }
+        public virtual DbSet<ActivityType> ActivityTypes { get; set; }
+        public virtual DbSet<Activity> Activities { get; set; }
         public virtual DbSet<Group> Groups { get; set; }
         public virtual DbSet<Target> Targets { get; set; }
+        public virtual DbSet<ActionTarget> ActionTargets { get; set; }
+        public virtual DbSet<ActivityTarget> ActivityTargets { get; set; }
+        public virtual DbSet<RequestAction> RequestActions { get; set; }
 
         //using fluent api instead of attributes (avoids decorating POCO class with EF-specific attributes)
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Conventions.Remove<ManyToManyCascadeDeleteConvention>();
+
             //On each entity, we need to define a key column.
             modelBuilder.Entity<Process>().HasKey(x => x.ProcessId);
             modelBuilder.Entity<User>().HasKey(x => x.UserId);
@@ -38,6 +46,9 @@ namespace Workflow.Repositories.DataRepository
             modelBuilder.Entity<Activity>().HasKey(x => x.ActivityId);
             modelBuilder.Entity<Group>().HasKey(x => x.GroupId);
             modelBuilder.Entity<Target>().HasKey(x => x.TargetId);
+            modelBuilder.Entity<ActionTarget>().HasKey(x => x.ActionTargetId);
+            modelBuilder.Entity<ActivityTarget>().HasKey(x => x.ActivityTargetId);
+            modelBuilder.Entity<RequestAction>().HasKey(x => x.RequestActionId);
 
             //specify that the keys are IDENTITY columns
             modelBuilder.Entity<Process>()
@@ -81,6 +92,9 @@ namespace Workflow.Repositories.DataRepository
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
             modelBuilder.Entity<Target>()
                 .Property(x => x.TargetId)
+                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+            modelBuilder.Entity<RequestAction>()
+                .Property(x => x.RequestActionId)
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
             //for each property in an entity, define the attributes of the corresponding column (string length, nullable, etc).
@@ -209,7 +223,8 @@ namespace Workflow.Repositories.DataRepository
 
             modelBuilder.Entity<Process>()
                 .HasMany(x => x.Transitions)
-                .WithRequired(x => x.Process);
+                .WithRequired(x => x.Process)
+                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Process>()
                 .HasMany(x => x.Actions)
@@ -307,4 +322,5 @@ namespace Workflow.Repositories.DataRepository
 
     }
 }
+
 

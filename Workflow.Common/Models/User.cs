@@ -9,9 +9,9 @@ namespace Workflow.Common.Models
         public string FirstName { get; set; }
         public string LastName { get; set; }
 
-        public ICollection<Process> AdministeredProcesses { get; set; }
-        public ICollection<Request> StakeRequests { get; set; }
-        public ICollection<RequestNote> RequestNotes { get; set; }
-        public ICollection<Group> Groups { get; set; }
+        public virtual ICollection<Process> AdministeredProcesses { get; set; }
+        public virtual ICollection<Request> StakeRequests { get; set; }
+        public virtual ICollection<RequestNote> RequestNotes { get; set; }
+        public virtual ICollection<Group> Groups { get; set; }
     }
 }

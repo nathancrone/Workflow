@@ -13,7 +13,7 @@ namespace Workflow.Common.Models
         public virtual State CurrentState { get; set; }
         public virtual State NextState { get; set; }
 
-        public ICollection<Action> Actions { get; set; }
-        public ICollection<Activity> Activities { get; set; }
+        public virtual ICollection<Action> Actions { get; set; }
+        public virtual ICollection<Activity> Activities { get; set; }
     }
 }

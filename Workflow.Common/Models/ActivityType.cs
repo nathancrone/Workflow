@@ -7,6 +7,6 @@ namespace Workflow.Common.Models
         public int? ActivityTypeId { get; set; }
         public string Name { get; set; }
 
-        public ICollection<Activity> Activities { get; set; }
+        public virtual ICollection<Activity> Activities { get; set; }
     }
 }
