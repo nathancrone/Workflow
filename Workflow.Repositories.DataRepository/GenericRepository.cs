@@ -18,21 +18,6 @@ namespace Workflow.Repositories.DataRepository
             _dbSet = _context.Set<T>();
         }
 
-        public void Delete(T entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Dispose()
-        {
-            throw new NotImplementedException();
-        }
-
-        public T FindById(int id)
-        {
-            throw new NotImplementedException();
-        }
-
         public IEnumerable<T> Get(
             Expression<Func<T, bool>> filter = null,
             Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null,
@@ -61,19 +46,39 @@ namespace Workflow.Repositories.DataRepository
             }
         }
 
-        public void Insert(T entity)
+        public T FindById(int id)
         {
-            throw new NotImplementedException();
+            return _dbSet.Find(id);
         }
 
-        public void Save()
+        public void Insert(T entity)
         {
-            throw new NotImplementedException();
+            _dbSet.Add(entity);
         }
 
         public void Update(T entity)
         {
-            throw new NotImplementedException();
+            _dbSet.Attach(entity);
+            _context.Entry(entity).State = EntityState.Modified;
         }
+
+        public void Delete(T entity)
+        {
+            if (_context.Entry(entity).State == EntityState.Detached)
+            {
+                _dbSet.Attach(entity);
+            }
+            _dbSet.Remove(entity);
+        }
+
+        //public void Dispose()
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+        //public void Save()
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 }
