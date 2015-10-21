@@ -40,7 +40,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IUnitOfWork.cs" />
     <Compile Include="Models\ActivityTarget.cs" />
     <Compile Include="Models\ActionTarget.cs" />
     <Compile Include="Models\Activity.cs" />
@@ -59,19 +58,15 @@
     <Compile Include="Models\Group.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\IProcessRepository.cs" />
-    <Compile Include="Repositories\IGenericRepository.cs" />
-    <Compile Include="Repositories\IRequestDataRepository.cs" />
-    <Compile Include="Repositories\IRequestNoteRepository.cs" />
-    <Compile Include="Repositories\IRequestRepository.cs" />
-    <Compile Include="Repositories\IUserRepository.cs" />
+    <Compile Include="IGenericRepository.cs" />
     <Compile Include="Services\IProcessService.cs" />
     <Compile Include="Services\IRequestDataService.cs" />
     <Compile Include="Services\IRequestNoteService.cs" />
     <Compile Include="Services\IRequestService.cs" />
-    <Compile Include="Services\IService.cs" />
+    <Compile Include="Services\IGenericService.cs" />
     <Compile Include="Services\IUserService.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

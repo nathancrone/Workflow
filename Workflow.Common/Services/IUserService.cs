@@ -3,8 +3,8 @@ using Workflow.Common.Models;
 
 namespace Workflow.Common.Services
 {
-    public interface IRequestNoteService : IGenericService<RequestNote>
+    public interface IUserService : IService<User>
     {
-        IEnumerable<RequestNote> GetAll();
+        IEnumerable<User> GetAll();
     }
 }

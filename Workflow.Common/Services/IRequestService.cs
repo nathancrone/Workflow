@@ -3,7 +3,7 @@ using Workflow.Common.Models;
 
 namespace Workflow.Common.Services
 {
-    public interface IRequestService : IService<Request>
+    public interface IRequestService : IGenericService<Request>
     {
         IEnumerable<Request> GetAll();
     }

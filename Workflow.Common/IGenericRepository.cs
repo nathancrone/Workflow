@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 
-namespace Workflow.Common.Repositories
+namespace Workflow.Common
 {
-    public interface IGenericRepository<T> where T : class
+    public interface IGenericRepository<T> : IDisposable where T : class
     {
         IEnumerable<T> Get(
             Expression<Func<T, bool>> filter = null,
@@ -15,12 +15,12 @@ namespace Workflow.Common.Repositories
         //Query Methods
         T FindById(int id);
 
-        // Insert/Delete
+        //Insert/Update/Delete
         void Insert(T entity);
         void Update(T entity);
         void Delete(T entity);
 
-        ////Persistence
-        //void Save();
+        //Persistence
+        void Save();
     }
 }

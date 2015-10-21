@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
-using Workflow.Common.Repositories;
+using Workflow.Common;
 
 namespace Workflow.Repositories.DataRepository
 {
@@ -71,14 +71,31 @@ namespace Workflow.Repositories.DataRepository
             _dbSet.Remove(entity);
         }
 
-        //public void Dispose()
-        //{
-        //    throw new NotImplementedException();
-        //}
+        public void Save()
+        {
+            _context.SaveChanges();
+        }
 
-        //public void Save()
-        //{
-        //    throw new NotImplementedException();
-        //}
+        #region IDisposable Support
+        private bool disposed = false;
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!this.disposed)
+            {
+                if (disposing)
+                {
+                    _context.Dispose();
+                }
+            }
+            this.disposed = true;
+        }
+
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+        #endregion
     }
 }
