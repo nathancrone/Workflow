@@ -16,6 +16,8 @@ namespace Workflow.Repositories.DataRepository
         {
             _context = context;
             _dbSet = _context.Set<T>();
+
+            var ensureDLLIsCopied = System.Data.Entity.SqlServer.SqlProviderServices.Instance;
         }
 
         public IEnumerable<T> Get(

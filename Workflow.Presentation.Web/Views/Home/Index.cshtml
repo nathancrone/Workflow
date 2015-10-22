@@ -1,7 +1,9 @@
-﻿
+﻿@model IEnumerable<Workflow.Common.Models.Process>
+
 @{
     ViewBag.Title = "Index";
 }
 
 <h2>Index</h2>
 
+@Model.Count();

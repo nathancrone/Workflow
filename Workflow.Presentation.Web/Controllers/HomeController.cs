@@ -20,7 +20,9 @@ namespace Workflow.Presentation.Web.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            return View();
+            IEnumerable <Process> p = _service.GetAll();
+
+            return View(p);
         }
     }
 }
