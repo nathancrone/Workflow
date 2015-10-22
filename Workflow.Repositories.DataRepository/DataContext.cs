@@ -1,8 +1,7 @@
-﻿using System.Data.Entity;
-using System.ComponentModel.DataAnnotations.Schema;
-
-using Workflow.Common.Models;
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
+using Workflow.Common.Models;
 
 namespace Workflow.Repositories.DataRepository
 {

@@ -40,6 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IModule.cs" />
+    <Compile Include="IModuleRegistrar.cs" />
     <Compile Include="Models\ActivityTarget.cs" />
     <Compile Include="Models\ActionTarget.cs" />
     <Compile Include="Models\Activity.cs" />
